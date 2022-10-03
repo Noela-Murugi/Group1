@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 function Form() {
+
+  //current state - firstName
+  //setFirst - function that is used to update our state.
+  //useState - set the initial state to an empty string
   const [firstName, setFirst] = useState("");
   const [lastName, setLast] = useState("");
   const [paragraph,setParagraph]  = useState([]);
@@ -10,6 +14,7 @@ function Form() {
       if(firstName&&lastName){
         setFirst("")
         setLast("")
+        //takes the string of firstname and lastname then returns both
         setParagraph(()=>[firstName,lastName])
       }
   }
@@ -56,7 +61,8 @@ function Form() {
       </div>)
     }
     </div>
-
+    //map() function iterates over an array
+    //and manipulate or change data items.
   );
 }
 export default Form;
