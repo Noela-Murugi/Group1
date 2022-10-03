@@ -5,6 +5,7 @@ function Form() {
   //current state - firstName
   //setFirst - function that is used to update our state.
   //useState - set the initial state to an empty string
+  
   const [firstName, setFirst] = useState("");
   const [lastName, setLast] = useState("");
   const [paragraph,setParagraph]  = useState([]);
