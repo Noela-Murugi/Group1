@@ -1,36 +1,35 @@
 import React, { useState } from "react";
-//  import DisplayData from "./DisplayData";
 
 function Form() {
   const [firstName, setFirst] = useState("");
   const [lastName, setLast] = useState("");
   const [paragraph,setParagraph]  = useState([]);
 
-  const nameSubmit = (e)=>{
+  function nameSubmit  (e){
     e.preventDefault();
-
       if(firstName&&lastName){
         setFirst("")
         setLast("")
-        setParagraph((p)=>[firstName,lastName])
-
+        setParagraph(()=>[firstName,lastName])
       }
   }
 
   return (
     <div>
-      <h1>Group 1 - Form Submit</h1>
     <form onSubmit={nameSubmit}>
       <label>
         First Name:
         <input
           value={firstName}
           name="firstName"
+
+          //onchange event occurs when the value of an element has been changed.
           onChange={(e) => {
              console.log(e.target.value);
             setFirst(e.target.value);
           }}
           type="text"
+          autoComplete="off"
         />
       </label>
       <label>
@@ -43,6 +42,7 @@ function Form() {
             setLast(e.target.value);
           }}
           type="text"
+          autoComplete="off"
         />
       </label>
       <button type="submit" >
